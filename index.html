@@ -260,7 +260,10 @@
 <div class="focus-panel" id="focusPanel" style="display: block;">
 <h3 style="margin:0 0 8px 0">My Current Focus — Women’s Health Innovation</h3>
 <p>Building a comfort-first women’s health brand: thoughtfully designed products, comforting teas, and accessible 1:1 sessions with trusted advisors and valued doctors. Our aim is to reduce everyday friction—from menstrual pain and product discomfort to recurrent infections—and elevate well-being through data, design, and care.</p>
-<canvas id="whChart" style="max-width: 100%; height: 799px; display: block; box-sizing: border-box; width: 666px;" height="999" width="833"></canvas>
+<div class="my-8">
+  <h4 class="section-title">Analytics Overview</h4>
+  <canvas id="myBarChart" style="max-width: 100%; height: 400px;"></canvas>
+</div>
 <div class="container" id="conditionVisualizer" style="padding:1rem 0;">
 <h4 class="section-title">Condition Visualizer</h4>
 <div class="stage" style="position:relative;width:100%;max-width:600px;height:300px;background:#2d3748;border-radius:1rem;overflow:hidden;margin:auto;">
@@ -649,6 +652,39 @@ function startAnimation(type) {
   if (animations[type]) animations[type]();
 }
 window.onload = () => { startAnimation('dysmenorrhea'); };
+</script>
+<!-- Chart.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Bar Chart Script -->
+<script>
+const ctx = document.getElementById('myBarChart').getContext('2d');
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Dysmenorrhea', 'PCOS', 'BV', 'VVC', 'Recurrent VVC'],
+        datasets: [{
+            label: 'Cases Analyzed',
+            data: [45, 30, 25, 15, 10],
+            backgroundColor: [
+                '#ef4444',
+                '#a5f3fc',
+                '#64748b',
+                '#fde047',
+                '#facc15'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { position: 'top' }
+        },
+        scales: {
+            y: { beginAtZero: true }
+        }
+    }
+});
 </script>
 
 </body></html>
