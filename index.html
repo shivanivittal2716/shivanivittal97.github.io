@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)file:///C:/Users/Shivani%20Vittal/Downloads/shivani_portfolio_with_animation.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Shivani Vittal — Portfolio + AI</title>
+<meta content="Shivani Vittal — Data Analyst &amp; Women’s Health Advocate — Interactive portfolio with AI chat assistant" name="description">
+<link href="https://fonts.googleapis.com/" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect">
+<link href="./Shivani Vittal — Portfolio + AI_files/css2" rel="stylesheet">
+<style>
+    :root{
+      --bg:#0b1020;            /* deep night */
+      --bg-soft:#0f152b;       /* card contrast */
+      --card:#121936;
+      --ink:#e6e9f5;           /* light ink */
+      --muted:#a9b4d0;
+      --accent:#9b87f5;        /* purple */
+      --accent-2:#22d3ee;      /* cyan */
+      --accent-3:#f97316;      /* orange */
+      --ring: rgba(153, 116, 255, .28);
+      --border: #1f2753;
+      --shadow: 0 18px 40px rgba(2,6,23,.35);
+      --pill:#1b2149;
+      --green:#34d399;
+      --red:#f43f5e;
+      --link:#8ab4ff;
+      --glass: rgba(255,255,255,.06);
+      --glass-2: rgba(255,255,255,.08);
+      --grad: radial-gradient(1200px 600px at 90% -10%, rgba(153,116,255,.25), transparent 60%),
+              radial-gradient(1000px 600px at -10% -10%, rgba(34,211,238,.20), transparent 60%),
+              radial-gradient(1200px 700px at 50% 110%, rgba(249,115,22,.18), transparent 60%);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans", Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1200px;margin:0 auto;padding:24px}
+    header.hero{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)),
+        var(--grad);
+      position:relative;
+      overflow:hidden;
+      padding:36px 0 28px 0;
+      border-bottom:1px solid var(--border);
+    }
+    .title{font-weight:900;font-size:clamp(30px,4.5vw,46px);letter-spacing:-.02em;margin:6px 0 8px 0}
+    .tagline{color:var(--muted);font-size:clamp(14px,2.2vw,18px)}
+    .grid{display:grid;grid-template-columns: 1.2fr .8fr;gap:26px;}
+    .video-wrap{
+      background:linear-gradient(180deg, var(--glass), rgba(255,255,255,.02));
+      border-radius:22px;box-shadow:var(--shadow);overflow:hidden;
+      border:1px solid var(--border);aspect-ratio:16/9;backdrop-filter:blur(6px);
+    }
+    iframe{width:100%;height:100%;border:0}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg, rgba(155,135,245,.18), rgba(34,211,238,.18));
+      color:#e9e7ff;border-radius:999px;padding:8px 12px;font-weight:700;font-size:12px;border:1px solid var(--border)}
+    .cards{display:grid;grid-template-columns: repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px}
+    .card{background:linear-gradient(180deg, var(--glass-2), rgba(255,255,255,.02));border:1px solid var(--border);border-radius:20px;padding:18px;box-shadow:var(--shadow);}
+    details{border:1px solid var(--border);background:linear-gradient(180deg, var(--glass-2), rgba(255,255,255,.02));border-radius:16px;padding:0;margin:12px 0;box-shadow:var(--shadow);overflow:hidden;}
+    summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:800;display:flex;align-items:center;justify-content:space-between;}
+    summary::-webkit-details-marker{display:none}
+    .chev{transition:transform .25s ease}
+    details[open] .chev{transform:rotate(90deg)}
+    .content{padding:0 20px 18px 20px;color:#e6e9f5}
+    .section-title{margin-top:28px;font-size:22px;font-weight:900}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:var(--pill);color:#e6e9f5;border:1px solid var(--border);font-size:12px}
+    .list{margin:0;padding-left:18px}
+    .list li{margin:8px 0}
+    .cta-bar{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btn{
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, #1b2149, #141a36);
+      color:#fff;padding:12px 16px;border-radius:12px;font-weight:800;cursor:pointer;
+      box-shadow:var(--shadow);transition:transform .05s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn.secondary{background: linear-gradient(180deg, #1a1f33, #0f1428);}
+    .btn:active{transform:translateY(1px)}
+    .focus-panel{background:linear-gradient(180deg, var(--glass-2), rgba(255,255,255,.02));border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin-top:12px;display:none}
+    .foot{margin:36px 0 18px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--border);padding-top:16px}
+    .sources{font-size:12px;color:#c8d0ea}
+    .badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+    .kpi{background:linear-gradient(180deg, rgba(52, 211, 153,.08), rgba(52,211,153,.02));border:1px solid var(--border);border-radius:16px;padding:12px;text-align:center}
+    .kpi .num{font-size:20px;font-weight:900}
+    .link-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    .contact{display:none}
+    .ring{box-shadow:0 0 0 8px var(--ring);}
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
+    /* Floating AI Chat */
+    .chat-launcher{
+      position:fixed;right:20px;bottom:20px;z-index:9999;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);cursor:pointer;border:1px solid var(--border);
+    }
+    .chat-launcher svg{filter:drop-shadow(0 2px 2px rgba(0,0,0,.25))}
+    .chat-window{
+      position:fixed;right:20px;bottom:88px;width:360px;max-height:70vh;display:none;z-index:9999;
+      background:linear-gradient(180deg, #121936, #0f152b);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);
+      overflow:hidden;display:flex;flex-direction:column;
+    }
+    .chat-header{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:linear-gradient(90deg, rgba(155,135,245,.15), rgba(34,211,238,.12));}
+    .chat-title{font-weight:900}
+    .chat-body{padding:12px;overflow:auto;display:flex;flex-direction:column;gap:8px}
+    .msg{max-width:84%;padding:10px 12px;border-radius:14px;line-height:1.35}
+    .bot{align-self:flex-start;background:rgba(155,135,245,.12);border:1px solid var(--border)}
+    .user{align-self:flex-end;background:rgba(34,211,238,.14);border:1px solid var(--border)}
+    .chat-input{display:flex;gap:8px;padding:10px;border-top:1px solid var(--border);background:#0f152b}
+    .chat-input input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:#0b1020;color:#fff}
+    .chat-input button{border:1px solid var(--border);background:linear-gradient(180deg,#1b2149,#141a36);color:#fff;font-weight:800;border-radius:10px;padding:10px 12px;cursor:pointer}
+    .settings{cursor:pointer;opacity:.85}
+    .small{font-size:12px;color:var(--muted)}
+    .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--border);font-size:11px}
+  </style>
+</head>
+<body>
+<header class="hero">
+<div class="container">
+<div class="badge">Open to relocate · Data Analytics · AI &amp; Product</div>
+<h1 class="title">Shivani Vittal</h1>
+<p class="tagline">Data Analyst (3+ yrs) · Turning raw data into actionable insight across healthcare, energy &amp; tech</p>
+<div class="grid" style="margin-top:18px">
+<div class="video-wrap ring">
+<video controls="" height="100%" poster="" style="display:block;border-radius:22px;" width="100%">
+<source src="Shivani_Vittal_Data_Enthusiast_Machine_Learning_and_Big_Data_Opportunities__08-13 17_26.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+<div>
+<div class="card">
+<div class="section-title">Quick Profile</div>
+<div class="badge-row">
+<span class="pill">SQL</span><span class="pill">Python</span><span class="pill">Power BI</span><span class="pill">Tableau</span>
+<span class="pill">AWS</span><span class="pill">Azure</span><span class="pill">GCP</span><span class="pill">Snowflake</span>
+<span class="pill">Spark</span><span class="pill">Databricks</span><span class="pill">ML</span><span class="pill">NLP</span>
+</div>
+<div class="kpis">
+<div class="kpi"><div class="num">35%</div><div class="lab">Reporting Accuracy ↑</div></div>
+<div class="kpi"><div class="num">1TB+</div><div class="lab">Pipelines handled</div></div>
+<div class="kpi"><div class="num">90%</div><div class="lab">Model accuracy (GRA)</div></div>
+</div>
+<div class="link-row">
+<a class="pill" href="mailto:shivanivittal57@gmail.com">shivanivittal57@gmail.com</a>
+<a class="pill" href="tel:+18605396026">+1 860-539-6026</a>
+<a class="pill" href="https://www.linkedin.com/in/shivani-vittal-861228211/" rel="noopener" target="_blank">LinkedIn</a>
+</div>
+<div class="cta-bar">
+<button class="btn" id="focusBtn">My Current Focus</button>
+<button class="btn secondary" id="contactBtn">Contact Me</button>
+</div>
+<div class="small" style="margin-top:12px">
+              Tip: Use the chat assistant (bottom-right) to ask anything—resume details, skills, projects, or women’s-health focus.
+            </div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="container">
+<!-- Expandable sections -->
+<details>
+<summary><span>Summary &amp; Career Overview</span><span class="chev">▶</span></summary>
+<div class="content">
+<p>Detail-oriented Data Analyst with 3+ years of experience transforming raw data into actionable insights to drive business decisions across healthcare, energy, and tech sectors. Skilled in SQL, Python, Excel, Power BI, and Tableau for dashboards, trend analysis, and KPI tracking. Experienced in A/B testing, forecasting, and customer behavior analytics—improved reporting accuracy by 35% and uncovered cost-saving opportunities through deep data exploration and stakeholder collaboration.</p>
+</div>
+</details>
+<details>
+<summary><span>Work Experience</span><span class="chev">▶</span></summary>
+<div class="content">
+<h4>Cognizant Technology Solutions — Data Analyst (AIA Engineering) <span style="color:#a9b4d0">· Remote, US · Sep 2021 – Aug 2023</span></h4>
+<ul class="list">
+<li>Enhanced big data pipelines using Hadoop/Spark to process over 1TB of data for workforce optimization.</li>
+<li>Automated data masking for “The Hartford” compliance using Python/SQL → 25% fewer sensitive data exposure incidents across 50+ apps.</li>
+<li>Performed SQL-based trend analysis → reporting accuracy ↑ 35%; identified cost-saving opportunities.</li>
+<li>Built KPI dashboards in Power BI/Tableau; partnered cross-functionally to implement robust ETL processes.</li>
+<li>Applied ML/NLP (TensorFlow) to build a resume analysis &amp; prediction tool to aid recruitment.</li>
+<li>Training in BIG DATA analytics: Snowflake, AWS, Unix, Shell Script, Scala.</li>
+</ul>
+<h4>UConn School of Business — Information Technology Business Analyst <span style="color:#a9b4d0">· Hartford, CT · Aug 2023 – May 2024</span></h4>
+<ul class="list">
+<li>Gathered &amp; documented requirements with faculty, staff, IT teams.</li>
+<li>Analyzed academic/admin processes to identify inefficiencies; proposed IT-driven improvements.</li>
+<li>Built Tableau/Excel dashboards for data-driven decisions; supported SIS &amp; Canvas testing/deployment.</li>
+<li>Created user guides, training; coordinated stakeholders for smooth adoption and performance monitoring.</li>
+</ul>
+</div>
+</details>
+<details>
+<summary><span>Research Experience</span><span class="chev">▶</span></summary>
+<div class="content">
+<h4>Institute of Materials Science — Graduate Research Assistant <span style="color:#a9b4d0">· Aug 2024 – May 2025</span></h4>
+<ul class="list">
+<li>Developed lifecycle management framework for AE Vernona; automated workflows and improved data processing speed by 60%.</li>
+<li>Presented findings to NYPA; delivered predictive model (90% accuracy) and cost-benefit analyses across 15+ scenarios for grid modernization.</li>
+<li>Used Python/R to analyze multi-terabyte datasets → processing time ↓ 40%; created 20+ Tableau visualizations.</li>
+<li>Coordinated with advisors &amp; sponsors to align deliverables with requirements and academic standards.</li>
+</ul>
+<h4>Jawaharlal Nehru Technological University — R&amp;D Assistant <span style="color:#a9b4d0">· Dec 2021 – Apr 2022</span></h4>
+<ul class="list">
+<li>Built “Smart Interface for Conventional Energy Meter” with ECIL, Hyderabad → reduced energy waste by 15%; won gold medal.</li>
+<li>Developed Python/Azure monitoring app + analytics dashboard for electricity optimization.</li>
+<li>Integrated LoRaWAN &amp; KVM for smart grid compatibility; engineered Hadoop pipeline and Tableau/Power BI visualizations.</li>
+<li>Used Excel &amp; BOINC for modeling/statistics to ensure accurate recommendations.</li>
+</ul>
+</div>
+</details>
+<details>
+<summary><span>Internship Experience</span><span class="chev">▶</span></summary>
+<div class="content">
+<h4>Hartford HealthCare — Data Engineer <span style="color:#a9b4d0">· Hartford, CT · Aug 2024 – Dec 2024</span></h4>
+<ul class="list">
+<li>Built AWS data pipelines → processing time ↓ 40% and timely data visualization.</li>
+<li>Boosted website engagement by 35% via funnel analysis, event path tracking, UI optimization.</li>
+<li>Launched interactive map-based doctor search → usability ↑ 40%.</li>
+<li>Defined 5 business metrics and built QuickSight dashboards for decision support.</li>
+<li>Led 4-person agile team; workflow efficiency ↑ 30%; delivered product-ready analytics tools.</li>
+</ul>
+<h4>MyEdMaster LLC — Business Analyst <span style="color:#a9b4d0">· Herndon, VA · May 2024 – Aug 2024</span></h4>
+<ul class="list">
+<li>Designed AI-powered health tracking software; analyzed 5,000+ interactions → compliance issues ↓ 25%.</li>
+<li>Competitive research across 10+ AI/ML platforms → 3 innovation opportunities; integrated 2 new features.</li>
+<li>Drove adoption of new product features ↑ 15%; managed workflows in JIRA.</li>
+<li>Translated business requirements into technical specs to align builds with strategy.</li>
+</ul>
+</div>
+</details>
+<details>
+<summary><span>Skills &amp; Tools</span><span class="chev">▶</span></summary>
+<div class="content">
+<p><strong>Programming &amp; Data Engineering:</strong> Python, R, SQL, ETL, Data Pipelines, Cloud (AWS, Azure, GCP), Big Data (Hadoop, Spark, Snowflake, BigQuery)</p>
+<p><strong>Data Science &amp; Analytics:</strong> Data Analysis, Preprocessing, Statistics, Predictive Modeling, ML/DL, NLP, Anomaly Detection, A/B Testing, Data Modeling</p>
+<p><strong>AI &amp; Advanced Analytics:</strong> Transformers (GPT, BERT, T5), RL, Generative AI, Prompt Engineering, Dify, AI Integration &amp; Deployment</p>
+<p><strong>ML Techniques:</strong> Supervised/Unsupervised, Feature Engineering, HPO, Gradient Boosting, XGBoost, Random Forest, scikit-learn</p>
+<p><strong>Industry &amp; Tech Tools:</strong> Power BI, Tableau, Databricks, Docker, Kubernetes, TensorFlow, PyTorch, Hugging Face, OpenAI API, Vertex AI, Git, SharePoint, ServiceNow, JMP, Looker Studio, Visio</p>
+<p><strong>Project &amp; Team:</strong> Agile, Project Planning, Stakeholder Comms, Workflow Optimization, MS Project, JIRA, RACI, SWOT, SIS, Canvas</p>
+</div>
+</details>
+<details>
+<summary><span>Education</span><span class="chev">▶</span></summary>
+<div class="content">
+<p><strong>University of Connecticut, Hartford, USA</strong> — Master of Science in Business Analytics and Project Management</p>
+</div>
+</details>
+<details>
+<summary><span>Certifications</span><span class="chev">▶</span></summary>
+<div class="content">
+<ul class="list">
+<li>Certified Salesforce AI Associate — Salesforce</li>
+<li>Scrum Fundamentals Certified — Scrum Study</li>
+<li>Kanban Essentials with AI Certified — Kanban Study</li>
+<li>AWS Educate Machine Learning Foundations — AWS</li>
+<li>Academy Accreditation: Generative AI Fundamentals — Databricks (valid until Mar 2027)</li>
+<li>Deloitte Technology Simulation — Coding, Data Analysis, Development, Cyber Security</li>
+</ul>
+</div>
+</details>
+<!-- My Current Focus panel -->
+<div class="focus-panel" id="focusPanel" style="display: block;">
+<h3 style="margin:0 0 8px 0">My Current Focus — Women’s Health Innovation</h3>
+<p>Building a comfort-first women’s health brand: thoughtfully designed products, comforting teas, and accessible 1:1 sessions with trusted advisors and valued doctors. Our aim is to reduce everyday friction—from menstrual pain and product discomfort to recurrent infections—and elevate well-being through data, design, and care.</p>
+<canvas id="whChart" style="max-width: 100%; height: 799px; display: block; box-sizing: border-box; width: 666px;" height="999" width="833"></canvas>
+<div class="container" id="conditionVisualizer" style="padding:1rem 0;">
+<h4 class="section-title">Condition Visualizer</h4>
+<div class="stage" style="position:relative;width:100%;max-width:600px;height:300px;background:#2d3748;border-radius:1rem;overflow:hidden;margin:auto;">
+<div class="title-bar" style="background:#4a5568;padding:0.5rem 1rem;border-top-left-radius:1rem;border-top-right-radius:1rem;color:#cbd5e0;font-weight:bold;display:flex;justify-content:space-between;align-items:center;">
+<span class="animation-title" id="animation-title" style="font-size:1.25rem;font-weight:600;">Dysmenorrhea (Pain)</span>
+<span class="text-sm" id="title-label">Pulsing/Spasmodic pain</span>
+</div>
+<div id="animation-area" style="width:100%;height:100%;"><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 6.16125px; top: 111.259px; transform: scale(1.08952);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 497.443px; top: 71.9068px; transform: scale(1.08952);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 50.8608px; top: 226.707px; transform: scale(1.08952);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 173.71px; top: 266.832px; transform: scale(1.08952);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 297.228px; top: 123.249px; transform: scale(1.08952);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 40.5578px; top: 27.0165px; transform: scale(1.08952);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 539.847px; top: 252.133px; transform: scale(1.08952);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 25.7904px; top: 274.992px; transform: scale(1.08952);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 240.734px; top: 119.623px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 173.06px; top: 247.425px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 87.6673px; top: 2.21947px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 39.9398px; top: 67.3152px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 225.182px; top: 85.1938px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 312.354px; top: 55.0734px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 12.6964px; top: 152.72px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 188.931px; top: 27.8929px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 522.471px; top: 164.9px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 554.266px; top: 197.355px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 48.8882px; top: 89.7347px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 15.1324px; top: 112.221px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 235.884px; top: 35.5811px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 66.9351px; top: 163.735px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 599.304px; top: 27.2543px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 374.768px; top: 273.335px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 251.396px; top: 83.3519px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 445.416px; top: 155.441px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 576.292px; top: 241.029px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 427.749px; top: 242.051px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 380.299px; top: 129.307px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 28.2845px; top: 100.512px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 471.53px; top: 208.1px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 209.744px; top: 170.775px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 406.705px; top: 41.6678px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 138.733px; top: 92.5865px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 97.8578px; top: 282.367px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 520.808px; top: 251.814px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 331.713px; top: 179.196px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 186.401px; top: 21.1005px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 231.99px; top: 226.484px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 178.426px; top: 48.7462px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 530.194px; top: 10.9627px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 501.193px; top: 13.9635px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 509.661px; top: 70.1756px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 456.577px; top: 294.407px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 51.0601px; top: 222.752px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 222.215px; top: 72.585px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 370.447px; top: 267.549px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 313.727px; top: 84.183px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 413.156px; top: 52.6247px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 225.077px; top: 127.144px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 22.0214px; top: 21.8166px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 503.443px; top: 52.7221px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 304.061px; top: 125.167px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 239.711px; top: 288.937px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 34.515px; top: 296.182px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 157.96px; top: 70.5728px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 200.16px; top: 283.04px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 356.63px; top: 184.199px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 378.82px; top: 14.6383px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 579.919px; top: 15.8585px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 592.711px; top: 264.039px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 84.685px; top: 109.61px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 153.317px; top: 20.9916px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 57.2686px; top: 25.9899px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 235.418px; top: 247.815px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 151.056px; top: 181.953px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 252.858px; top: 16.6893px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 553.027px; top: 20.522px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 96.437px; top: 203.711px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 139.919px; top: 54.5726px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 238.039px; top: 270.645px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 486.198px; top: 74.0565px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 191.556px; top: 10.7334px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 268.354px; top: 125.385px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 538.901px; top: 145.775px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 320.248px; top: 217.269px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 479.798px; top: 173.439px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 35.89px; top: 126.71px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 476.248px; top: 108.465px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 57.2067px; top: 135.966px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 430.539px; top: 135.891px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 324.111px; top: 281.786px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 217.85px; top: 39.5077px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 486.098px; top: 70.0409px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 99.173px; top: 172.779px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 341.145px; top: 79.0864px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 62.5659px; top: 26.1298px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 33.1178px; top: 199.599px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 353.738px; top: 187.865px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 539.547px; top: 256.139px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 448.889px; top: 202.761px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 444.267px; top: 16.4633px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 247.036px; top: 296.12px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 143.899px; top: 40.0486px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 460.909px; top: 179.424px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 58.1936px; top: 220.418px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 0.997218px; top: 18.6137px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 493.494px; top: 1.02559px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 549.117px; top: 135.813px; transform: scale(1.08929);"></div><div style="position: absolute; width: 10px; height: 10px; background: rgba(239, 68, 68, 0.7); border-radius: 50%; left: 537.356px; top: 298.155px; transform: scale(1.08929);"></div></div>
+</div>
+<div class="button-group" style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;margin-top:1rem;">
+<button class="action-button" onclick="startAnimation(&#39;dysmenorrhea&#39;)">Dysmenorrhea (Pain)</button>
+<button class="action-button" onclick="startAnimation(&#39;pcos&#39;)">PCOS (Cysts)</button>
+<button class="action-button" onclick="startAnimation(&#39;bv&#39;)">Bacterial Vaginosis</button>
+<button class="action-button" onclick="startAnimation(&#39;vvc&#39;)">VVC (Severe)</button>
+<button class="action-button" onclick="startAnimation(&#39;recurrent-vvc&#39;)">Recurrent VVC</button>
+</div>
+<div class="content" style="margin-top:1rem;">
+<p>These animations provide a visual metaphor for each condition’s primary symptoms or nature. They use abstract shapes, colors, and motion to help you quickly grasp key characteristics:</p>
+<ul class="list">
+<li><strong>Dysmenorrhea (Pain):</strong> Pulsing red particles represent spasmodic, cramp-like sensations, conveying discomfort and lack of stillness.</li>
+<li><strong>PCOS:</strong> Randomly appearing cyan particles represent sporadic cyst formation, showing irregularity and unpredictability.</li>
+<li><strong>Bacterial Vaginosis:</strong> Dense, erratically moving gray particles symbolize an imbalanced bacterial overgrowth and microbiome disruption.</li>
+<li><strong>VVC (Severe):</strong> Yellow particles that grow and cluster visualize aggressive fungal growth and discomfort.</li>
+<li><strong>Recurrent VVC:</strong> Yellow particles cycle in and out, representing the recurring nature of infection.</li>
+</ul>
+</div>
+</div>
+
+<div class="sources">
+<p><strong>Data sources (summarized):</strong></p>
+<ul>
+<li>Dysmenorrhea affects ~45–95% of women of reproductive age; severe pain 2–29% (systematic reviews).</li>
+<li>PCOS global prevalence commonly ~5–13%; ~69.5M women living with PCOS in 2021 (GBD analyses).</li>
+<li>Bacterial vaginosis (BV) general-population prevalence ~23–29% globally.</li>
+<li>Vulvovaginal candidiasis (VVC): ~75% of women have ≥1 episode; 5–8% experience recurrent VVC.</li>
+<li>Pad-related dermatitis/irritation is documented; robust global prevalence estimates are limited.</li>
+</ul>
+</div>
+<div class="cards">
+<div class="card">
+<strong>What we’re building</strong>
+<ul class="list">
+<li>Gentle, breathable period products designed to reduce irritation</li>
+<li>Comforting teas &amp; nutrition guidance crafted with experts</li>
+<li>1:1 virtual sessions with advisors and doctors</li>
+</ul>
+</div>
+<div class="card">
+<strong>Impact goals</strong>
+<ul class="list">
+<li>Reduce reported menstrual discomfort by 20% within pilot cohorts</li>
+<li>Improve adherence to preventive care for recurrent infections</li>
+<li>Inclusive design that fits diverse bodies &amp; lifestyles</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Contact panel -->
+<div class="focus-panel contact" id="contactPanel">
+<h3 style="margin:0 0 8px 0">Contact</h3>
+<p>Email: <a href="mailto:shivanivittal57@gmail.com">shivanivittal57@gmail.com</a></p>
+<p>Phone: <a href="tel:+18605396026">+1 860-539-6026</a></p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/shivani-vittal-861228211/" rel="noopener" target="_blank">linkedin.com/in/shivani-vittal-861228211</a></p>
+</div>
+<details>
+<summary><span>Selected Projects</span><span class="chev">▶</span></summary>
+<div class="content">
+<ul class="list">
+<li><strong>GenAI Crop Disease Detection:</strong> MobileNetV3; 87% accuracy across 12 diseases; multilingual voice for 2,000+ farmers; deployed on Cloud Dify; latency ↓ 30%.</li>
+<li><strong>Healthcare Analytics DB:</strong> MySQL system for 10,000+ patient records; retrieval time ↓ 40%; clinic workflow efficiency ↑ 30%.</li>
+<li><strong>SAS Energy Analytics:</strong> Five-state electricity consumption modeling; targeted conservation strategies at 90% accuracy.</li>
+<li><strong>Airbnb NYC Analysis:</strong> R/Tableau predictive modeling; forecast accuracy ↑ 30%; patterns across 20,000+ listings.</li>
+</ul>
+</div>
+</details>
+</main>
+<footer class="container foot">
+<div>© <span id="year">2025</span> Shivani Vittal · Hartford, CT · Open to relocate within US</div>
+</footer>
+<div class="chat-window" id="chatWindow" style="display: none;">
+<div class="chat-header">
+<div class="chat-title">Shivani’s AI Assistant</div>
+<div>
+<span class="chip settings" id="setKey">API Key</span>
+<span class="chip settings" id="clearKey">Clear</span>
+<span class="chip settings" id="closeChat">Close</span>
+</div>
+</div>
+<div class="chat-body" id="chatBody">
+<div class="msg bot">Hi! I can answer questions about Shivani’s skills, projects, and her women’s-health focus. Ask me anything.</div>
+</div>
+<div class="chat-input">
+<input id="chatInput" placeholder="Type your question…">
+<button id="sendBtn">Send</button>
+</div>
+<div class="small" style="padding:0 12px 10px 12px;">Tip: Add an OpenAI API key via <b>API Key</b> to enable full AI answers. Without a key, I’ll use a built‑in helper.</div>
+</div>
+<div class="chat-launcher" id="launcher" title="Chat with AI">
+<svg fill="none" height="28" viewBox="0 0 24 24" width="28">
+<path d="M12 3C7.03 3 3 6.58 3 11c0 2.09 1.01 3.98 2.65 5.39-.12.93-.52 2.4-1.6 3.7 0 0 2.02-.22 3.95-1.3.96.26 1.98.41 3 .41 4.97 0 9-3.58 9-8s-4.03-8-9-8Z" stroke="white" stroke-width="1.5"></path>
+</svg>
+</div>
+<script src="./Shivani Vittal — Portfolio + AI_files/chart.js.download"></script>
+<script>
+    // Toggle panels
+    const focusBtn = document.getElementById('focusBtn');
+    const focusPanel = document.getElementById('focusPanel');
+    const contactBtn = document.getElementById('contactBtn');
+    const contactPanel = document.getElementById('contactPanel');
+    focusBtn.addEventListener('click', () => {
+      focusPanel.style.display = focusPanel.style.display === 'none' || focusPanel.style.display === '' ? 'block' : 'none';
+      window.scrollTo({ top: focusPanel.offsetTop - 12, behavior: 'smooth' });
+    });
+    contactBtn.addEventListener('click', () => {
+      contactPanel.style.display = contactPanel.style.display === 'none' || contactPanel.style.display === '' ? 'block' : 'none';
+      window.scrollTo({ top: contactPanel.offsetTop - 12, behavior: 'smooth' });
+    });
+
+    // Women’s health analytics chart
+    const ctx = document.getElementById('whChart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Dysmenorrhea (any)', 'PCOS (global)', 'Bacterial Vaginosis', 'VVC (ever)', 'Recurrent VVC'],
+        datasets: [{
+          label: '% of women affected (global context)',
+          data: [75, 10, 26, 75, 6],
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => c.parsed.y + '%' } } },
+        scales: { y: { beginAtZero: true, ticks: { callback: (v) => v + '%' } } }
+      }
+    });
+
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Chatbot logic
+    const launcher = document.getElementById('launcher');
+    const chatWindow = document.getElementById('chatWindow');
+    const closeChat = document.getElementById('closeChat');
+    const chatBody = document.getElementById('chatBody');
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendBtn');
+    const setKeyBtn = document.getElementById('setKey');
+    const clearKeyBtn = document.getElementById('clearKey');
+
+    launcher.addEventListener('click', () => { chatWindow.style.display = 'flex'; });
+    closeChat.addEventListener('click', () => { chatWindow.style.display = 'none'; });
+
+    setKeyBtn.addEventListener('click', async () => {
+      const key = prompt('Enter your OpenAI API key (stored locally in this browser):');
+      if (key) { localStorage.setItem('OPENAI_API_KEY', key.trim()); alert('API key saved locally.'); }
+    });
+    clearKeyBtn.addEventListener('click', () => { localStorage.removeItem('OPENAI_API_KEY'); alert('API key cleared.'); });
+
+    function addMessage(text, who='bot'){
+      const div = document.createElement('div');
+      div.className = 'msg ' + who;
+      div.textContent = text;
+      chatBody.appendChild(div);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    const portfolioFacts = `
+Shivani Vittal — Data Analyst (3+ yrs). Skills: SQL, Python, Power BI, Tableau, AWS, Azure, GCP, Snowflake, Spark, Databricks, ML, NLP.
+Work: Cognizant (Data Analyst, AIA Eng., Sep 2021–Aug 2023) — 1TB+ pipelines, 35% reporting accuracy ↑, The Hartford compliance 25% fewer exposure incidents, KPI dashboards, resume ML/NLP project.
+UConn School of Business (IT Business Analyst, Aug 2023–May 2024) — requirements, SIS/Canvas, Tableau/Excel.
+Research: Institute of Materials Science (GRA, Aug 2024–May 2025) — lifecycle framework, +60% processing speed, NYPA model 90% acc., 15+ scenarios, 20+ Tableau viz; JNTU (Dec 2021–Apr 2022) smart energy meter, 15% energy waste ↓, LoRaWAN/KVM, Hadoop + dashboards.
+Internships: Hartford HealthCare (Data Engineer, Aug–Dec 2024) — AWS pipelines 40% faster, +35% engagement, map search +40% usability, QuickSight metrics; MyEdMaster (BA, May–Aug 2024) — AI health tracker, 25% fewer compliance issues, 3 innovations, +15% adoption.
+Projects: GenAI Crop disease MobileNetV3 (87% acc., 12 diseases, Dify deploy), Healthcare DB (10k+ patients, 40% faster), SAS energy (90% acc.), Airbnb (30% better forecast).
+Certs: Salesforce AI Associate, Scrum Fundamentals, Kanban AI, AWS ML Foundations, Databricks GenAI (to Mar 2027), Deloitte Tech Simulation.
+Current Focus: comfort-first women’s health (period products, teas, 1:1 advisors & doctors). Analytics: Dysmenorrhea 45–95% (use 75), PCOS 5–13% (use 10), BV ~23–29% (use 26), VVC 75% ever, 5–8% recurrent (use 6).
+Contact: shivanivittal57@gmail.com, +1 860-539-6026, linkedin.com/in/shivani-vittal-861228211.
+Video: https://www.visionstory.ai/s/yU0MVnw7vNA
+`;
+
+    async function callOpenAI(question){
+      const key = localStorage.getItem('OPENAI_API_KEY');
+      if(!key) return null;
+      try{
+        const sys = `You are an assistant embedded in Shivani Vittal’s portfolio website. Answer succinctly and helpfully about her resume, skills, projects, women’s-health focus, and general data analytics tips. If asked for contact, provide email, phone, LinkedIn from the provided facts. Keep answers under 180 words unless explicitly asked for more.`;
+        const body = {
+          model: "gpt-4o-mini",
+          messages: [
+            { role: "system", content: sys },
+            { role: "user", content: "Facts about the portfolio:\n" + portfolioFacts },
+            { role: "user", content: question }
+          ],
+          temperature: 0.4
+        };
+        const res = await fetch("https://api.openai.com/v1/chat/completions",{
+          method:"POST",
+          headers:{ "Content-Type":"application/json", "Authorization":"Bearer " + key },
+          body: JSON.stringify(body)
+        });
+        if(!res.ok){ throw new Error(await res.text()); }
+        const data = await res.json();
+        return data.choices?.[0]?.message?.content?.trim() || "I couldn’t generate a response.";
+      }catch(e){
+        return `API error: ${e.message}`;
+      }
+    }
+
+    function fallbackAnswer(q){
+      q = q.toLowerCase();
+      if(q.includes("contact") || q.includes("email") || q.includes("phone") || q.includes("linkedin")){
+        return "You can reach Shivani at shivanivittal57@gmail.com · +1 860‑539‑6026 · linkedin.com/in/shivani-vittal-861228211";
+      }
+      if(q.includes("skills") || q.includes("tech") || q.includes("tools")){
+        return "Core skills: SQL, Python, Power BI, Tableau, AWS, Azure, GCP, Snowflake, Spark, Databricks, ML, NLP, ETL, A/B testing, dashboards.";
+      }
+      if(q.includes("experience") || q.includes("work")){
+        return "Cognizant (Data Analyst): 1TB+ pipelines, +35% reporting accuracy, compliance automation; UConn School of Business (IT BA): SIS/Canvas, Tableau/Excel dashboards.";
+      }
+      if(q.includes("intern") || q.includes("internship")){
+        return "Hartford HealthCare (Data Engineer): AWS pipelines 40% faster, +35% engagement; MyEdMaster (BA): AI health tracker, 25% fewer compliance issues.";
+      }
+      if(q.includes("research")){
+        return "Institute of Materials Science (GRA): lifecycle framework, 90% model accuracy for NYPA; JNTU R&D: smart energy meter, 15% energy waste reduction.";
+      }
+      if(q.includes("project")){
+        return "Highlights: GenAI crop disease (87% acc.), Healthcare DB (10k+ patients, 40% faster), SAS energy (90% acc.), Airbnb NYC (30% forecast gain).";
+      }
+      if(q.includes("women") || q.includes("focus") || q.includes("pcos") || q.includes("menstru")){
+        return "Current focus: comfort-first women’s health—gentle products, teas, and 1:1 expert sessions. Analytics: Dysmenorrhea ~75%, PCOS ~10%, BV ~26%, VVC ever ~75%, recurrent ~6%.";
+      }
+      return "I can help with Shivani’s resume, skills, projects, and her women’s-health focus. Ask about experience, tools, contact, or projects.";
+    }
+
+    async function handleSend(){
+      const text = chatInput.value.trim();
+      if(!text) return;
+      addMessage(text, 'user');
+      chatInput.value = "";
+      let reply = await callOpenAI(text);
+      if(!reply){ reply = fallbackAnswer(text); }
+      addMessage(reply, 'bot');
+    }
+    sendBtn.addEventListener('click', handleSend);
+    chatInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ handleSend(); }});
+  </script>
+<script>
+let animationFrameId = null;
+const animationArea = document.getElementById('animation-area');
+const titleElement = document.getElementById('animation-title');
+const titleLabel = document.getElementById('title-label');
+const stageWidth = 600;
+const stageHeight = 300;
+function createCells(count, className, color) {
+  const newCells = [];
+  for (let i = 0; i < count; i++) {
+    const cell = document.createElement('div');
+    cell.style.position = 'absolute';
+    cell.style.width = '10px';
+    cell.style.height = '10px';
+    cell.style.background = color;
+    cell.style.borderRadius = '50%';
+    cell.style.left = (Math.random() * stageWidth) + 'px';
+    cell.style.top = (Math.random() * stageHeight) + 'px';
+    animationArea.appendChild(cell);
+    newCells.push({
+      element: cell,
+      x: parseFloat(cell.style.left),
+      y: parseFloat(cell.style.top),
+      dx: (Math.random() - 0.5) * 2,
+      dy: (Math.random() - 0.5) * 2
+    });
+  }
+  return newCells;
+}
+const animations = {
+  'dysmenorrhea': () => {
+    let cellData = createCells(100, 'dysmenorrhea-cell', 'rgba(239, 68, 68, 0.7)');
+    const animate = () => {
+      cellData.forEach(cell => {
+        cell.x += cell.dx;
+        cell.y += cell.dy;
+        if (cell.x <= 0 || cell.x >= stageWidth - 10) cell.dx *= -1;
+        if (cell.y <= 0 || cell.y >= stageHeight - 10) cell.dy *= -1;
+        cell.element.style.left = cell.x + 'px';
+        cell.element.style.top = cell.y + 'px';
+        const scale = 1 + Math.sin(Date.now() / 200) * 0.1;
+        cell.element.style.transform = `scale(${scale})`;
+      });
+      animationFrameId = requestAnimationFrame(animate);
+    };
+    animate();
+    titleElement.textContent = 'Dysmenorrhea (Pain)';
+    titleLabel.textContent = 'Pulsing/Spasmodic pain';
+  },
+  'pcos': () => {
+    let cellData = createCells(50, 'pcos-cell', 'rgba(165, 243, 252, 0.7)');
+    let timer = 0;
+    const animate = () => {
+      timer++;
+      if (timer % 50 === 0) {
+        const cell = cellData[Math.floor(Math.random() * cellData.length)];
+        cell.element.style.opacity = 1;
+        cell.element.style.width = '20px';
+        cell.element.style.height = '20px';
+        setTimeout(() => {
+          cell.element.style.opacity = 0;
+          cell.element.style.width = '10px';
+          cell.element.style.height = '10px';
+        }, 1000);
+      }
+      animationFrameId = requestAnimationFrame(animate);
+    };
+    animate();
+    titleElement.textContent = 'PCOS (Cysts)';
+    titleLabel.textContent = 'Random cyst formation';
+  },
+  'bv': () => {
+    let cellData = createCells(150, 'bv-cell', 'rgba(100, 116, 139, 0.7)');
+    cellData.forEach(cell => { cell.element.style.width = '5px'; cell.element.style.height = '5px'; });
+    const animate = () => {
+      cellData.forEach(cell => {
+        cell.x += cell.dx;
+        cell.y += cell.dy;
+        if (cell.x <= 0 || cell.x >= stageWidth - 5) cell.dx *= -1;
+        if (cell.y <= 0 || cell.y >= stageHeight - 5) cell.dy *= -1;
+        cell.element.style.left = cell.x + 'px';
+        cell.element.style.top = cell.y + 'px';
+      });
+      animationFrameId = requestAnimationFrame(animate);
+    };
+    animate();
+    titleElement.textContent = 'Bacterial Vaginosis';
+    titleLabel.textContent = 'Imbalanced bacterial growth';
+  },
+  'vvc': () => {
+    let cellData = createCells(70, 'vvc-cell', 'rgba(253, 224, 71, 0.7)');
+    let timer = 0;
+    const animate = () => {
+      timer++;
+      cellData.forEach(cell => {
+        cell.x += cell.dx;
+        cell.y += cell.dy;
+        if (cell.x <= 0 || cell.x >= stageWidth - 12) cell.dx *= -1;
+        if (cell.y <= 0 || cell.y >= stageHeight - 12) cell.dy *= -1;
+        cell.element.style.left = cell.x + 'px';
+        cell.element.style.top = cell.y + 'px';
+        if (timer % 100 === 0) {
+          cell.element.style.transform = `scale(${Math.random() * 0.5 + 1})`;
+        } else if (timer % 100 === 50) {
+          cell.element.style.transform = 'scale(1)';
+        }
+      });
+      animationFrameId = requestAnimationFrame(animate);
+    };
+    animate();
+    titleElement.textContent = 'VVC (Severe)';
+    titleLabel.textContent = 'Fungal growth & clustering';
+  },
+  'recurrent-vvc': () => {
+    let cellData = createCells(70, 'vvc-cell', 'rgba(253, 224, 71, 0.7)');
+    let timer = 0;
+    const animate = () => {
+      timer++;
+      cellData.forEach(cell => {
+        cell.x += cell.dx;
+        cell.y += cell.dy;
+        if (cell.x <= 0 || cell.x >= stageWidth - 12) cell.dx *= -1;
+        if (cell.y <= 0 || cell.y >= stageHeight - 12) cell.dy *= -1;
+        cell.element.style.left = cell.x + 'px';
+        cell.element.style.top = cell.y + 'px';
+        if (timer % 200 === 0) {
+          cell.element.style.opacity = 0;
+        } else if (timer % 200 === 100) {
+          cell.element.style.opacity = 1;
+        }
+      });
+      animationFrameId = requestAnimationFrame(animate);
+    };
+    animate();
+    titleElement.textContent = 'Recurrent VVC';
+    titleLabel.textContent = 'Recurring fungal cycles';
+  }
+};
+function startAnimation(type) {
+  if (animationFrameId) cancelAnimationFrame(animationFrameId);
+  animationArea.innerHTML = '';
+  if (animations[type]) animations[type]();
+}
+window.onload = () => { startAnimation('dysmenorrhea'); };
+</script>
+
+</body></html>
