@@ -658,32 +658,34 @@ window.onload = () => { startAnimation('dysmenorrhea'); };
 
 <!-- Bar Chart Script -->
 <script>
-const ctx = document.getElementById('myBarChart').getContext('2d');
-new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Dysmenorrhea', 'PCOS', 'BV', 'VVC', 'Recurrent VVC'],
-        datasets: [{
-            label: 'Cases Analyzed',
-            data: [45, 30, 25, 15, 10],
-            backgroundColor: [
-                '#ef4444',
-                '#a5f3fc',
-                '#64748b',
-                '#fde047',
-                '#facc15'
-            ]
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: { position: 'top' }
+window.addEventListener('DOMContentLoaded', () => {
+    const ctx = document.getElementById('myBarChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Dysmenorrhea', 'PCOS', 'BV', 'VVC', 'Recurrent VVC'],
+            datasets: [{
+                label: 'Cases Analyzed',
+                data: [45, 30, 25, 15, 10],
+                backgroundColor: [
+                    '#ef4444',
+                    '#a5f3fc',
+                    '#64748b',
+                    '#fde047',
+                    '#facc15'
+                ]
+            }]
         },
-        scales: {
-            y: { beginAtZero: true }
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' }
+            },
+            scales: {
+                y: { beginAtZero: true }
+            }
         }
-    }
+    });
 });
 </script>
 
