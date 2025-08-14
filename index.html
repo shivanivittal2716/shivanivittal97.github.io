@@ -470,14 +470,27 @@ Video: https://www.visionstory.ai/s/yU0MVnw7vNA
     }
 
     async function handleSend(){
-      const text = chatInput.value.trim();
-      if(!text) return;
-      addMessage(text, 'user');
-      chatInput.value = "";
-      let reply = await callOpenAI(text);
-      if(!reply){ reply = fallbackAnswer(text); }
-      addMessage(reply, 'bot');
+    const input = document.getElementById('chatInput');
+    const text = input.value.trim();
+    if(!text) return;
+    addMessage(text, 'user');
+    input.value = '';
+
+    let reply = null;
+
+    // Try API if key is set
+    if (localStorage.getItem('OPENAI_API_KEY')) {
+        reply = await callOpenAI(text);
     }
+
+    // Always use fallback if API not available or failed
+    if (!reply) {
+        reply = fallbackAnswer(text);
+    }
+
+    addMessage(reply, 'bot');
+}
+
     sendBtn.addEventListener('click', handleSend);
     chatInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ handleSend(); }});
   </script>
