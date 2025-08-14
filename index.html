@@ -660,6 +660,19 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// Chat launcher toggle
+const launcher = document.getElementById('launcher');
+const chatWindow = document.getElementById('chatWindow');
+const closeChatBtn = document.getElementById('closeChat');
+
+launcher.addEventListener('click', () => {
+  chatWindow.style.display = 'flex'; // show the chat window
+});
+
+closeChatBtn.addEventListener('click', () => {
+  chatWindow.style.display = 'none'; // hide the chat window
+});
+
 </script>
 
 </body></html>
