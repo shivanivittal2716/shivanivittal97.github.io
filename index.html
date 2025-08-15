@@ -493,6 +493,24 @@ Video: https://www.visionstory.ai/s/yU0MVnw7vNA
 
     sendBtn.addEventListener('click', handleSend);
     chatInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ handleSend(); }});
+    
+// --- API Key Management ---
+const setKeyBtn = document.getElementById('setKey');
+const clearKeyBtn = document.getElementById('clearKey');
+
+setKeyBtn.addEventListener('click', () => {
+    const newKey = prompt("Enter your OpenAI API key:");
+    if (newKey) {
+        localStorage.setItem('OPENAI_API_KEY', newKey.trim());
+        alert("✅ API key saved! Chatbot will now use real AI answers when possible.");
+    }
+});
+
+clearKeyBtn.addEventListener('click', () => {
+    localStorage.removeItem('OPENAI_API_KEY');
+    alert("🗑️ API key cleared. Chatbot will now use built-in fallback answers.");
+});
+
   </script>
 <script>
 let animationFrameId = null;
