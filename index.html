@@ -491,13 +491,18 @@ Video: https://www.visionstory.ai/s/yU0MVnw7vNA
     addMessage(reply, 'bot');
 }
 
-    sendBtn.addEventListener('click', handleSend);
-    chatInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ handleSend(); }});
-    
-// --- API Key Management ---
+// Get chatbot elements
+const sendBtn = document.getElementById('sendBtn');
+const chatInput = document.getElementById('chatInput');
 const setKeyBtn = document.getElementById('setKey');
 const clearKeyBtn = document.getElementById('clearKey');
 
+sendBtn.addEventListener('click', handleSend);
+chatInput.addEventListener('keydown', (e) => { 
+    if (e.key === 'Enter') { handleSend(); } 
+});
+
+// API Key Management
 setKeyBtn.addEventListener('click', () => {
     const newKey = prompt("Enter your OpenAI API key:");
     if (newKey) {
