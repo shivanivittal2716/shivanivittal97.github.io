@@ -382,6 +382,9 @@
       window.scrollTo({ top: contactPanel.offsetTop - 12, behavior: 'smooth' });
     });
 
+    <canvas id="whChart" width="400" height="200"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     // Women’s health analytics chart
     const ctx = document.getElementById('whChart').getContext('2d');
     const chart = new Chart(ctx, {
